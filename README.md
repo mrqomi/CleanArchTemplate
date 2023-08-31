@@ -1,4 +1,4 @@
-# Dotnet Clean Architucture DP and Reactjs for UI
-Hey! This Solution is starter for My dotnetcore projects in Clean Architucture DP with Reactjs for UI
+# Dotnet Clean Architecture DP and React Js for UI
+Hey! This Solution is starter for My dotnetcore projects in Clean Architecture DP and Reactjs for UI
 
 
