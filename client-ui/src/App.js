@@ -2,18 +2,27 @@ import './App.css';
 import './Assets/assets/css/bootstrap.min.css'
 import './Assets/assets/css/atlantis.min.css'
 import './Assets/assets/css/demo.css'
-import './Assets/assets/css/fonts.min.css'
-import './Assets/assets/css/font-awesome.min.css'
 import Layout from './Layout/Layout';
-
-
+import Axios from 'axios';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from './Pages/Home';
 
 function App() {
+
+
+  let _routes = 
+  <Router>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='*' element={<div>NotFound</div>}/>
+    </Routes>
+  </Router>
+
   return (
     <div className="wrapper">
       <Layout title='سلام دنیا'>
-          asdasdasd
-      </Layout>        
+        {_routes}
+      </Layout>
     </div>
   );
 }

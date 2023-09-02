@@ -1,5 +1,5 @@
 import Wrapper from "../hoc/Wrapper"
-
+import { Link } from "react-router-dom"
 const Toolbar=()=> {
   return (
     <Wrapper>
@@ -47,16 +47,16 @@ const Toolbar=()=> {
                 </div>
             </div>
             <ul className="nav nav-primary">
-                <li className="nav-item">
+                <li className="nav-item active submenu" >
                     <a data-toggle="collapse" href="#dashboard" className="collapsed" aria-expanded="false">
                         <i className="fas fa-home"></i>
                         <p>Dashboard</p>
                         <span className="caret"></span>
                     </a>
-                    <div className="collapse" id="dashboard">
+                    <div className="collapse show" id="dashboard">
                         <ul className="nav nav-collapse">
                             <li>
-                                <a href="../demo1/index.html">
+                                <a href="/">
                                     <span className="sub-item">Dashboard 1</span>
                                 </a>
                             </li>
@@ -135,13 +135,13 @@ const Toolbar=()=> {
                         </ul>
                     </div>
                 </li>
-                <li className="nav-item active submenu">
+                <li className="nav-item ">
                     <a data-toggle="collapse" href="#sidebarLayouts">
                         <i className="fas fa-th-list"></i>
                         <p>Sidebar Layouts</p>
                         <span className="caret"></span>
                     </a>
-                    <div className="collapse show" id="sidebarLayouts">
+                    <div className="collapse " id="sidebarLayouts">
                         <ul className="nav nav-collapse">
                             <li className="active">
                                 <a href="sidebar-style-1.html">
