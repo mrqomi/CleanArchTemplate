@@ -84,7 +84,6 @@ const Layout = ({ children }) => {
 
          
 
-            <Toolbar/>
 
 
             <div className="main-panel">
