@@ -8,10 +8,14 @@ const Layout = ({ children }) => {
 
     const[headerClass,setHeaderClass]=useState("")
     const[title,settitle]=useState("")
-  
 
+ 
+    const[menuShow,setMenuToShow]=useState(true)
+    const handleMenuToggle=()=>{
+        setMenuToShow(!menuShow)
+    }
     return (
-        <Wrapper>
+        <div className={menuShow?"wrapper":"wrapper sidebar_minimize"}>
             <div className="main-header">
 
                 <div className="logo-header" data-background-color="blue">
@@ -20,15 +24,15 @@ const Layout = ({ children }) => {
 
                         <span className="text-white">سامانه مدیریت</span>
                     </a>
-                    <button className="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <button  className="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon">
                             <i className="icon-menu"></i>
                         </span>
                     </button>
-                    <button className="topbar-toggler more"><i className="icon-options-vertical"></i></button>
+                    <button onClick={()=>handleMenuToggle()} className="topbar-toggler more"><i className="icon-options-vertical"></i></button>
                     <div className="nav-toggle">
                         <button className="btn btn-toggle toggle-sidebar">
-                            <i className="icon-menu"></i>
+                            <i onClick={()=>handleMenuToggle()} className="icon-menu"></i>
                         </button>
                     </div>
                 </div>
@@ -135,7 +139,7 @@ const Layout = ({ children }) => {
 
         
            
-        </Wrapper>
+        </div>
     )
 
 }

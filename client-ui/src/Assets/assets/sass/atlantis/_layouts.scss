@@ -3,7 +3,7 @@
 body {
   min-height: 100vh;
   position: relative;
-  background: $grey2-color;*/
+  background: $grey2-color;
 }
 
 .no-bd{
@@ -209,12 +209,12 @@ body {
                 > span {
                     font-size: 14px;
                     font-weight: $font-weight-normal;
-                    color: #fff;
+                    color: #343131;
                     display: flex;
                     flex-direction: column;
 
                     .user-level {
-                        color: #fff;
+                        color: #090707;
                         font-weight: $font-weight-bold;
                         font-size: 12px;
                         margin-top: 5px;

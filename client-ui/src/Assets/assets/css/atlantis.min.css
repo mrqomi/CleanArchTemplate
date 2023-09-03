@@ -555,14 +555,14 @@ body {
             .sidebar .user .info a > span, .sidebar[data-background-color="white"] .user .info a > span {
                 font-size: 13px;
                 font-weight: 400;
-                color: #e1cdcd;
+                color: #8097c1;
                 display: flex;
                 flex-direction: column;
                 letter-spacing: -0.5px;
             }
 
                 .sidebar .user .info a > span .user-level, .sidebar[data-background-color="white"] .user .info a > span .user-level {
-                    color: #fff;
+                    color: #0f0e0e;
                     font-weight: 600;
                     font-size: 12px;
                     margin-top: 5px;
