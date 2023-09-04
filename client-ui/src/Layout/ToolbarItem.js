@@ -21,7 +21,7 @@ export default function ToolbarItem({menuItem}) {
     )
     return (
             <li className={ IsShow?"nav-item submenu":"nav-item"} >
-                <a onClick={() => handelCollapseItem()}   href={"#" + menuItem.index} className={IsShow?"":"Collapsed"}>
+                <a onClick={() => handelCollapseItem()}   className={IsShow?"":"Collapsed"}>
                     <i className={"fas " + menuItem.icon}></i>
                     <p>{menuItem.id}</p>
                     <span className="caret"></span>

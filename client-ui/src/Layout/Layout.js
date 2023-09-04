@@ -1,15 +1,11 @@
-import React, { createContext, useState } from 'react'
-import Wrapper from '../hoc/Wrapper'
-import Toolbar from "./Toolbar";
+import {React,useContext ,useState } from 'react'
+import { ProfileContext } from "../hoc/Contexts"
 
-export const ProfileContext=createContext();
+export const Layout = ({ children }) => {
 
-const Layout = ({ children }) => {
 
-    const[headerClass,setHeaderClass]=useState("")
-    const[title,settitle]=useState("")
-
- 
+    const {title}=useContext(ProfileContext);
+    const {headerClass}=useContext(ProfileContext);
     const[menuShow,setMenuToShow]=useState(true)
     const handleMenuToggle=()=>{
         setMenuToShow(!menuShow)
@@ -19,9 +15,7 @@ const Layout = ({ children }) => {
             <div className="main-header">
 
                 <div className="logo-header" data-background-color="blue">
-
                     <a href="/" className="logo">
-
                         <span className="text-white">سامانه مدیریت</span>
                     </a>
                     <button  className="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,12 +95,7 @@ const Layout = ({ children }) => {
                             </div>
                         </div>
                     </div>
-                    <ProfileContext.Provider value={{
-                        headerClass,
-                        setHeaderClass,
-                        title,
-                        settitle
-                        }}>
+                   
                     <div className="page-inner mt--5">
                         <div className="row">
                             <div className="col-md-12">
@@ -121,7 +110,7 @@ const Layout = ({ children }) => {
                             </div>
                         </div>
                     </div>
-                    </ProfileContext.Provider>
+        
                 </div>
                 <footer className="footer">
                     <div className="container-fluid">
@@ -132,13 +121,6 @@ const Layout = ({ children }) => {
                     </div>
                 </footer>
             </div>
-
-
-
-
-
-        
-           
         </div>
     )
 

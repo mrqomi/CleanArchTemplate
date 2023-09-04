@@ -1,3 +1,4 @@
+import { React, createContext, useState } from 'react'
 import './App.css';
 import './Assets/assets/css/bootstrap.min.css'
 import './Assets/assets/css/atlantis.min.css'
@@ -6,25 +7,32 @@ import Layout from './Layout/Layout';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './Pages/Home';
 import Toolbar from './Layout/Toolbar';
+import NotFound from './Pages/NotFound';
+import { ProfileContext } from './hoc/Contexts';
+
 
 function App() {
 
+  const [headerClass, setHeaderClass] = useState("")
+  const [title, setTitle] = useState("")
 
-  let _routes = 
-  <Router>
-    <Toolbar>
-    </Toolbar>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='*' element={<div>NotFound</div>}/>
-    </Routes>
-  </Router>
+
+
 
   return (
     <div className="wrapper">
-      <Layout>
-        {_routes}
-      </Layout>
+      <ProfileContext.Provider value={{ title, setTitle, headerClass, setHeaderClass }}>
+        <Layout>
+          <Router>
+            <Toolbar>
+            </Toolbar>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </Router>
+        </Layout>
+      </ProfileContext.Provider>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import Wrapper from "../hoc/Wrapper"
 import ToolbarItem from "./ToolbarItem"
 import { useState } from "react"
+import avater from "../Assets/assets/img/profile.jpg"
 
 export const initialData=[
     {
@@ -22,7 +23,7 @@ export const initialData=[
 {
     index:2,
     id: "عملیات اصلی",
-    icon: "fa-home",
+    icon: "fa-layer-group",
     submenu: [{
         index:1,
         link: "/asd",
@@ -61,10 +62,10 @@ const Toolbar = () => {
                             <div className="user">
 
                                 <div className="avatar-sm float-right mr-2">
-                                    <img src="/assets/img/profile.jpg" alt="..." className="avatar-img rounded-circle" />
+                                    <img src={avater} alt="..." className="avatar-img rounded-circle" />
                                 </div>
                                 <div className="info">
-                                    <a onClick={()=>handleUserMenuShow()} className={userMenu?"":"collapsed"} data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                                    <a onClick={()=>handleUserMenuShow()} className={userMenu?"":"collapsed"} data-toggle="collapse" aria-expanded="true">
                                         <span>
                                             ممد
                                             <span className="user-level">سلام</span>
@@ -98,7 +99,6 @@ const Toolbar = () => {
                         </div>
                         <ul className="nav nav-primary">
                             {_toolbarItem}
-
                         </ul>
 
 
