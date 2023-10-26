@@ -1,0 +1,56 @@
+body, h1, h3, a {
+    font-family: 'IRANYekan','IRANSans', sans-serif;
+}
+
+a {
+    color: #FFAB00;
+}
+
+    a:hover {
+        color: #ffd800;
+    }
+
+.login-right {
+    background: linear-gradient(135deg, #000,60%, #315300);
+}
+
+.login-img {
+    width: 70%;
+    height: auto;
+}
+
+.CaptchaVal {
+    border-radius: 0.75rem;
+}
+
+.validationSpan {
+    color: red;
+}
+
+.align-items-right {
+    direction: rtl !important;
+    margin-top: 2rem;
+}
+#basic-datatables_filter {
+     direction: rtl
+ }
+
+table {
+    direction: rtl;
+    text-align: center;
+}
+
+.card-tools {
+    float: left
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background: #f9f9f9 !important;
+    border-color: #d0d0d0 !important;
+}
+
+.swal-title , .swal-text{
+    direction: rtl
+}
+
+

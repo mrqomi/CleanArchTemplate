@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Wrapper from "../hoc/Wrapper"
+import Wrapper from "../Helper/Wrapper"
 import ToolbarItem from "./ToolbarItem"
 import { useState } from "react"
 import avater from "../Assets/assets/img/profile.jpg"

@@ -1,5 +1,5 @@
 import {React,  useContext, useEffect } from "react"
-import { ProfileContext } from '../hoc/Contexts';
+import { ProfileContext } from '../Helper/Contexts';
 
 const Home=()=>{
 const {setTitle,setHeaderClass}=useContext(ProfileContext);

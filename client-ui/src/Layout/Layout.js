@@ -1,5 +1,5 @@
 import {React,useContext ,useState } from 'react'
-import { ProfileContext } from "../hoc/Contexts"
+import { ProfileContext } from '../Helper/Contexts'
 
 export const Layout = ({ children }) => {
 

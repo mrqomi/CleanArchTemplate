@@ -1,14 +1,13 @@
-import { React, createContext, useState } from 'react'
+import { React, useState } from 'react'
 import './App.css';
-import './Assets/assets/css/bootstrap.min.css'
-import './Assets/assets/css/atlantis.min.css'
-import './Assets/assets/css/demo.css'
+
 import Layout from './Layout/Layout';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './Pages/Home';
 import Toolbar from './Layout/Toolbar';
 import NotFound from './Pages/NotFound';
-import { ProfileContext } from './hoc/Contexts';
+import { ProfileContext } from './Helper/Contexts';
+import { Login } from './Pages/Login';
 
 
 function App() {
@@ -16,22 +15,34 @@ function App() {
   const [headerClass, setHeaderClass] = useState("")
   const [title, setTitle] = useState("")
 
+  const _token = localStorage.getItem("token");
+  let _route = <Layout>
+    <Router>
+      <Toolbar>
+      </Toolbar>
+      <Routes>
+        <Route path='/Home' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </Router>
+  </Layout>
+  if (!_token) {
+    _route =
+      <Router>
+        <Routes>
 
+          <Route path='/login' element={<Login />} />
+          <Route path='/' element={<Login />} />
+        </Routes>
+      </Router>
+  }
 
 
   return (
     <div className="wrapper">
       <ProfileContext.Provider value={{ title, setTitle, headerClass, setHeaderClass }}>
-        <Layout>
-          <Router>
-            <Toolbar>
-            </Toolbar>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='*' element={<NotFound />} />
-            </Routes>
-          </Router>
-        </Layout>
+        {_route}
       </ProfileContext.Provider>
     </div>
   );
